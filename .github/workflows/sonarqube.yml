@@ -19,14 +19,14 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
+           
+      - name: SonarQube Scan
+        run: sonar-scanner \
+          -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
       - name: Official SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2.0.1
             
 
-      - name: SonarQube Scan
-        run: sonar-scanner \
-          -Dsonar.projectKey=King_ragul_testing_build \
-          -Dsonar.sources=. \
-          -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
