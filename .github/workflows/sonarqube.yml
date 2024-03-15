@@ -29,7 +29,7 @@ jobs:
 
       - name: SonarQube Scan
         run: sonar-scanner \
-          -Dsonar.projectKey=your_project_key \
+          -Dsonar.projectKey=King_ragul_testing_build \
           -Dsonar.sources=. \
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
