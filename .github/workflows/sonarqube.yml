@@ -20,12 +20,9 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install SonarScanner
-        run: |
-          sudo apt-get install openjdk-11-jdk -y
-          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
-          unzip sonar-scanner-cli-4.6.2.2472-linux.zip
-          export PATH=$PATH:/path/to/sonar-scanner/bin
+      - name: Official SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v2.0.1
+            
 
       - name: SonarQube Scan
         run: sonar-scanner \
